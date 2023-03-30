@@ -1,7 +1,8 @@
 
 <?php
 echo "<a href='http://localhost:3000/main.php'>Home</a><br>";
-
+echo "
+";
 $conn = new mysqli("localhost","root","","db_bed_and_breakfast");
 
 if ($conn->connect_error) {
@@ -24,9 +25,20 @@ if ($result->num_rows > 0) {
     echo "Nessuna prenotazione trovata.";
 }
 
-echo "<a href='http://localhost:3000/aggiungi_prenotazione.php'>Aggiungi una prenotazione</a><br>";
 
-echo "<a href='http://localhost:3000/elimina_prenotazioni.php'>Elimina prenotazioni</a>";
+
 
 $conn->close();
 ?>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <a href='http://localhost:3000/aggiungi_prenotazione.php'>Aggiungi una prenotazione</a>
+    <p> </p>
+    <a href='http://localhost:3000/elimina_prenotazioni.php'>Elimina prenotazioni</a>
+  </body>
+</html>
